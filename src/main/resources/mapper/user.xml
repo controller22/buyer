@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+
 <mapper namespace="shop.mtcoding.buyer.model.UserRepository">
    <select id="findAll" resultType="shop.mtcoding.buyer.model.User">
       select * from user_tb
@@ -25,4 +26,9 @@
       set password = #{password}
       where id = #{id}
    </update>
+
+    <select id="findByUsernameAndPassword" resultType="shop.mtcoding.buyer.model.User">
+      select * from user_tb where username = #{username} and password=#{password}
+    </select>
+
 </mapper>
