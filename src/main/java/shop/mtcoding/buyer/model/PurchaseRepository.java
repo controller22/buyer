@@ -13,7 +13,7 @@ public interface PurchaseRepository {
 
     public Purchase findById(int id);
 
-    public int updateById(@Param("id") int id, @Param("productId") int productId);
+    public int updateById(@Param("id") int id, @Param("qty") int qty);
 
     public int deleteById(int id);
 }

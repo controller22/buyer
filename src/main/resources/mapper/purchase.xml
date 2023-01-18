@@ -4,4 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="shop.mtcoding.buyer.model.PurchaseRepository">
+
+   <update id="updateById">
+      update product_tb 
+      set name = #{password},
+      price = #{price},
+      qty={qty}-#{qty}
+      where id = #{id}
+   </update>
+
 </mapper>

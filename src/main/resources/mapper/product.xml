@@ -22,9 +22,8 @@
 
    <update id="updateById">
       update product_tb 
-      set name = #{password},
-      price = #{price},
-      qty=#{qty}
+      set
+      qty = qty-#{qty}
       where id = #{id}
    </update>
 </mapper>
