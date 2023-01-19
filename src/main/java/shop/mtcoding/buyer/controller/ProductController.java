@@ -33,12 +33,25 @@ public class ProductController {
     // return "product/main"; // request 새로 만들어짐 - 덮어쒸움(프레임워크)
     // }
 
+    // select * from product where price =1000
+    // pk가 아니면 queryString으로 전송
     @GetMapping("/product/{id}")
-    public String findById(@PathVariable int id, Model model) {
+    public String detail(@PathVariable int id, Model model) {
         Product product = productRepository.findById(id);
-        model.addAttribute("product", product);
-        return "product/detail";
+        if (product == null) {
+            return "redirect:/notfound";
+        } else {
+            model.addAttribute("product", product);
+            return "product/detail";
+        }
     }
+
+    // @GetMapping("/product/{id}")
+    // public String findById(@PathVariable int id, Model model) {
+    // Product product = productRepository.findById(id);
+    // model.addAttribute("product", product);
+    // return "product/detail";
+    // }
 
     @PostMapping("/product/{id}/purchase")
     public String updateById(@PathVariable int id, int purchase, Model model) {

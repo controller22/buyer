@@ -11,6 +11,6 @@ public class Purchase {
     private int id;
     private int usrId;
     private int productId;
+    private int qty;
     private Timestamp createdAt;
-
 }

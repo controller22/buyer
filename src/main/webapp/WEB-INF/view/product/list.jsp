@@ -24,5 +24,4 @@
 
 
         </table>
-
         <%@ include file="../layout/footer.jsp" %>
