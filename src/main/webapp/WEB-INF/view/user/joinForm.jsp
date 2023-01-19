@@ -8,8 +8,7 @@
             <input type="text" name="username" placeholder="Enter username" required><br />
             <input type="password" name="password" placeholder="Enter password" required><br />
             <input type="email" name="email" placeholder="Enter email" required><br />
-            유저네임을 기억할까요? <input type="checkbox" name="remember"><br />
-            <button type="submit">로그인</button>
+            <button type="submit">회원가입</button>
         </form>
 
 
