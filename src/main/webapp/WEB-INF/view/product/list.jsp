@@ -12,13 +12,13 @@
                 <th>재고</th>
                 <th>등록일</th>
             </tr>
-            <c:forEach items="${productList}" var="productList">
+            <c:forEach items="${productList}" var="product">
                     <tr>
-                        <td>${productList.id}</td>
-                        <td><a href="/product/${productList.id}">${productList.name}</a></td>
-                        <td>${productList.price}</td>
-                        <td>${productList.qty}</td>
-                        <td>${productList.createdAt}</td>
+                        <td>${product.id}</td>
+                        <td><a href="/product/${product.id}">${product.name}</a></td>
+                        <td>${product.price}원</td>
+                        <td>${product.qty}개</td>
+                        <td>${product.createdAtToString}</td>
                     </tr>
                 </c:forEach>
 

@@ -15,11 +15,11 @@ import shop.mtcoding.buyer.model.ProductRepository;
 @Controller
 public class ProductController {
 
-    @Autowired
+    @Autowired // DI
     ProductRepository productRepository;
 
     @GetMapping({ "/", "/product" })
-    public String home(Model model) {
+    public String home(Model model) { // model = request
         // return "product/list";
         List<Product> productList = productRepository.findAll();
         model.addAttribute("productList", productList);
