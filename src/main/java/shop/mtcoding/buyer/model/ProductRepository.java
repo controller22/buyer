@@ -13,7 +13,8 @@ public interface ProductRepository {
 
     public Product findById(int id);
 
-    public int updateById(@Param("id") int id, @Param("qty") int qty);
+    public int updateById(@Param("id") int id, @Param("name") String name, @Param("price") int price,
+            @Param("qty") int qty);
 
     public int deleteById(int id);
 

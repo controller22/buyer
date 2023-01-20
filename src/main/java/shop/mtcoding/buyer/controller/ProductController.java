@@ -53,14 +53,4 @@ public class ProductController {
     // return "product/detail";
     // }
 
-    @PostMapping("/product/{id}/purchase")
-    public String updateById(@PathVariable int id, int purchase, Model model) {
-
-        int result = productRepository.updateById(id, purchase);
-        if (result == 1) {
-            return "redirect:/product/{id}";
-        } else {
-            return "redirect:/home";
-        }
-    }
 }
