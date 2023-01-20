@@ -20,19 +20,18 @@
             </tr>
 
         </table>
-        <form action="/purchase/insert" method="post"></form>
-        <input type="hidden" name="productId" value="${product.id}">
-        <select name="count">
-            <c:forEach begin="1" end="${product.qty}" var="num">
-                <option value="${num}">${num}</option>
-            </c:forEach>
-        </select>
-        <button type="submit">구매하기</button>
-        <div class="number_box">
-            <form action="/product/${product.id}/purchase" method="post">
-                <input type="number" name="purchase" min="0" max="9999" value="1">
-                <button type="submit">구매</button>
+        <c:if test="${principal!=null}">
+
+            <form action="/purchase/insert" method="post">
+                <input type="hidden" name="productId" value="${product.id}">
+                <select name="count">
+                    <c:forEach begin="1" end="${product.qty}" var="num">
+                        <option value="${num}">${num}</option>
+                    </c:forEach>
+                </select>
+                개 <button type="submit">구매</button>
             </form>
-        </div>
+
+        </c:if>
 
         <%@ include file="../layout/footer.jsp" %>

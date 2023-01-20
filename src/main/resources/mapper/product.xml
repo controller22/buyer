@@ -22,7 +22,7 @@
 
    <update id="updateById">
       update product_tb 
-      set qty = qty-#{qty}
+      set qty = #{qty}
       where id = #{id}
    </update>
 </mapper>
